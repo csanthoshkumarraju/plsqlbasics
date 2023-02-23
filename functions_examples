@@ -1,0 +1,63 @@
+create or replace function adder(a in number,b in number) return number
+is 
+c number;
+begin
+c := a+b;
+return c;
+end;
+declare
+c number;
+begin
+c := adder(23,57);
+dbms_output.put_line(c);
+end;
+create or replace function square(a in number) return number 
+is 
+b number;
+begin
+b := a*a;
+return b;
+end;
+declare
+b number;
+begin
+b := square(6);
+dbms_output.put_line(b);
+end;
+create or replace function find_max(a in  number, b in number) return number
+is
+c number;
+begin 
+  if a < b then
+   c := b;
+    return c;
+  elsif a > b then
+   c := a;
+   return c;
+  else 
+   return a;
+  end if;
+end;
+declare
+c number;
+begin
+c := find_max(56,100);
+dbms_output.put_line(c);
+end;
+create or replace function loan(amount in  number) return varchar2
+is
+status varchar2(100);
+begin
+if amount < 10001 then 
+   return 'auto approve';
+else 
+   return 'approval is required';
+end if;
+end;
+declare
+status varchar2(100);
+begin
+status := loan(10000) ;
+dbms_output.put_line(status);
+end;
+
