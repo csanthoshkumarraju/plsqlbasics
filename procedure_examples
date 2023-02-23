@@ -1,0 +1,56 @@
+-- pl sql calculating area of circle using procedure
+create or replace procedure areaoc(r in number, area out number)
+is 
+begin
+ area := 3.14 * r * r;
+end areaoc;
+/
+declare
+   r number := 5;
+   area number;
+begin
+  areaoc(r,area);
+  dbms_output.put_line(area);
+end;
+/
+  -- pl sql calculating square of a number using procedure
+
+create or replace procedure  square(x in number,sqr out number)
+is
+begin
+  sqr := x*x;
+end;
+/
+declare 
+x number := 5;
+sqr number;
+begin
+ square(x,sqr);
+ dbms_output.put_line(sqr);
+end;
+/
+-- pl sql calculating maximum number using procedure
+
+create or replace procedure findmax(x in  number,y in number,z out number)
+is
+begin
+   if x<y then
+   z :=y;
+   dbms_output.put_line(x || '<' || y);
+   elsif x>y then
+   z := x;
+   dbms_output.put_line(x || '>' || y);
+  else
+    z:= x;
+   dbms_output.put_line(x || '=' || y);
+  end if;
+end;
+declare
+x number := 4;
+y number := 4;
+z number;
+begin
+findmax(x,y,z);
+end;
+/
+
