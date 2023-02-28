@@ -1,0 +1,77 @@
+CREATE OR REPLACE PACKAGE add_numbers_pkg AS
+  FUNCTION add_numbers(a IN NUMBER, b IN NUMBER) RETURN NUMBER;
+END add_numbers_pkg;
+/
+
+CREATE OR REPLACE PACKAGE BODY add_numbers_pkg AS
+  FUNCTION add_numbers(a IN NUMBER, b IN NUMBER) RETURN NUMBER IS
+  BEGIN
+    RETURN a + b;
+  END add_numbers;
+END add_numbers_pkg;
+/
+DECLARE
+  result NUMBER;
+BEGIN
+  result := add_numbers_pkg.add_numbers(10, 20);
+  DBMS_OUTPUT.PUT_LINE('Result: ' || result);
+END;
+/
+create or replace package mul as 
+     function muli(a in number,b in number) return number;
+end mul;
+create or replace package body mul as 
+     function muli(a in number,b in number) return number 
+is 
+begin 
+ return a * b;
+ end muli;
+end mul;
+declare
+ c number;
+begin 
+  c :=mul.muli(2,4);
+  dbms_output.put_line(c);
+end;
+create or replace package sub as
+    function subr(a in number,b in number) return number;
+end sub;
+create or replace package body sub as
+    function subr(a in number,b in number) return number
+is 
+begin 
+return a - b;
+end subr;
+end sub;
+declare
+ c number;
+begin
+ c :=sub.subr(4,3);
+ dbms_output.put_line(c);
+end;
+create or replace package div as
+   procedure divi(a in number,b in number);
+end div;
+create or replace package body div as
+   procedure divi(a in number,b in number) is
+c number;
+begin
+  c := a / b ;
+  dbms_output.put_line(c);
+end divi;
+end div;
+declare
+ a number := 6;
+ b number := 2;
+begin
+  div.divi(a,b);
+end;
+
+
+
+
+
+
+
+
+
