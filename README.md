@@ -11,7 +11,9 @@ end;
 declare
 b number := 2;
 d number := 4;
+Sum number ;
 begin
+Sum := b + d ;
 dbms_output.put_line(b|| '+' || d || '=');
 dbms_output.put_line(b+d);
 dbms_output.put_line(d || '-' || b || '=' );
@@ -22,9 +24,7 @@ dbms_output.put_line(d || '/' || b || '=' );
 dbms_output.put_line(d/b);
 dbms_output.put_line(b || '**' || d || '=' );
 dbms_output.put_line(b**d);
--- dbms_output.put_line(b|| '+' || d || '=' || b+d); -- here getting error ORA-06502: PL/SQL: numeric or value error: 
--- character to number conversion error ORA-06512: at line 15
--- ORA-06512: at "SYS.DBMS_SQL", line 1721
+dbms_output.put_line(b|| '+' || d || '=' || Sum);
 end;
 
 -- *************************************************
