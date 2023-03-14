@@ -11,9 +11,9 @@ end;
 declare
 b number := 2;
 d number := 4;
-Sum number ;
+add number ;
 begin
-Sum := b + d ;
+add := b + d ;
 dbms_output.put_line(b|| '+' || d || '=');
 dbms_output.put_line(b+d);
 dbms_output.put_line(d || '-' || b || '=' );
@@ -24,7 +24,7 @@ dbms_output.put_line(d || '/' || b || '=' );
 dbms_output.put_line(d/b);
 dbms_output.put_line(b || '**' || d || '=' );
 dbms_output.put_line(b**d);
-dbms_output.put_line(b|| '+' || d || '=' || Sum);
+dbms_output.put_line(b|| '+' || d || '=' || add);
 end;
 
 -- *************************************************
